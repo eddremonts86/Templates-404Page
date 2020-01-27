@@ -1,0 +1,74 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { 
+        @content;
+     }
+  }
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(45deg,rgb(255, 255, 255), rgb(233, 233, 233));
+    height: 100vh;
+    #container{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(../imgs/recipyBG.jpg);        
+        color: white;     
+        box-shadow: 0px 10px 30px rgba(255,255,255,.4);
+        .content{
+                text-align: center;                
+            h2{
+                font-size: 18vw;   
+                line-height: 1em;
+                @include for-phone-only{
+                    font-size:28vw;
+                }
+            }
+            h3{
+                font-size: 2vw;
+                position: relative;
+                margin-bottom: 20px;
+                @include for-phone-only{
+                    font-size:8vw;
+                }
+                    
+            }   
+            p{
+                font-size: 1.2em;
+                margin:0 12px 35px 12px;
+                @include for-phone-only{
+                    font-size:0.8em;
+                }
+                
+            } 
+            a {
+                background: transparent;
+                border: 2.5px solid #fff;
+                padding: 15px 25px;
+                margin: 25px;
+                border-radius: 15px;
+                font-size: 0.9em;
+             }
+            a:hover{
+                background: #ffffff;
+                color: rgba(0,0,0,.7);
+                transition: 0.5s;
+            }
+
+        }    
+    } 
+
+}
